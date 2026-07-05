@@ -1,0 +1,162 @@
+.card {
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 480px;
+  transition: var(--transition-smooth);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.5);
+  padding-bottom: 12px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  letter-spacing: -0.3px;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: hsl(var(--danger-h), var(--danger-s), var(--danger-l));
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.clearBtn:hover {
+  background-color: hsla(var(--danger-h), var(--danger-s), var(--danger-l), 0.05);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.015);
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.7);
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.item:hover {
+  transform: translateX(2px);
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.03);
+  border-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.4);
+}
+
+.flags {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+
+.flag {
+  font-size: 18px;
+}
+
+.arrow {
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.3);
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mathRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mathText {
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+.codeText {
+  font-size: 11px;
+  font-weight: 600;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.5);
+}
+
+.resultText {
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.4);
+}
+
+.divider {
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.2);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  text-align: center;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.4);
+  font-size: 13px;
+  gap: 8px;
+}
+
+.emptyIcon {
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.15);
+}
+
+.emptyHint {
+  font-size: 11px;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.3);
+  max-width: 240px;
+  line-height: 1.4;
+}

@@ -1,0 +1,378 @@
+.panel {
+  padding: 16px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition-smooth);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  letter-spacing: -0.3px;
+}
+
+.refreshBtn {
+  background: none;
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.refreshBtn:hover {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.05);
+}
+
+.refreshBtn.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+.errorBanner {
+  background-color: hsla(var(--danger-h), var(--danger-s), var(--danger-l), 0.1);
+  border-left: 3px solid hsl(var(--danger-h), var(--danger-s), var(--danger-l));
+  color: hsl(var(--danger-h), --danger-s, --danger-l);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.converterGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  position: relative;
+}
+
+.inputCard {
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.02);
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currencySelect {
+  display: flex;
+  align-items: center;
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.currencySelect:hover {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  transform: translateY(-1px);
+}
+
+.flag {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.code {
+  font-size: 13px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+.chevron {
+  margin-left: 4px;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.4);
+}
+
+.amountInput {
+  flex: 1;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  width: 100%;
+  text-align: right;
+  font-family: inherit;
+}
+
+.amountInput:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera: remove spinner arrows */
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox: remove spinner arrows */
+.amountInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.resultValue {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  text-align: right;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 2px 0;
+}
+
+.swapWrapper {
+  display: flex;
+  justify-content: center;
+  margin: -4px 0;
+  z-index: 2;
+}
+
+.swapButton {
+  background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(100, 80, 250, 0.2);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: rotate(90deg);
+}
+
+.swapButton:hover {
+  transform: rotate(90deg) scale(1.08);
+}
+
+.swapButton:active {
+  transform: rotate(90deg) scale(0.96);
+}
+
+.swapButton.rotated {
+  transform: rotate(270deg);
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  padding-bottom: 10px;
+}
+
+.rateDisplay {
+  font-size: 12px;
+  font-weight: 500;
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.saveBtn {
+  background: none;
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 1);
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.8);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.saveBtn:hover:not(:disabled) {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.03);
+}
+
+.saveBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Favorites shortcuts */
+.favoritesShortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shortcutsTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.5);
+}
+
+.shortcutsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.shortcutPill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.shortcutPill:hover:not(.activeTarget):not(.disabledPill) {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.03);
+}
+
+.shortcutFlag {
+  font-size: 14px;
+}
+
+.shortcutCode {
+  font-size: 11px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+.shortcutRate {
+  font-size: 9px;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.4);
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.05);
+  padding: 1px 4px;
+  border-radius: 8px;
+}
+
+.activeTarget {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.06);
+}
+
+.activeTarget .shortcutCode {
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.disabledPill {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.markupRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  padding-bottom: 10px;
+}
+
+.markupLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.5);
+}
+
+.markupControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.markupSelect {
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.markupSelect:hover {
+  border-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.customMarkupInputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.8);
+  border-radius: 6px;
+  padding: 2px 6px;
+  width: 68px;
+  gap: 2px;
+}
+
+.customMarkupInput {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+  outline: none;
+  padding: 0;
+}
+
+.customMarkupInput::-webkit-outer-spin-button,
+.customMarkupInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.customMarkupInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.percentSymbol {
+  font-size: 10px;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.4);
+  font-weight: 600;
+}

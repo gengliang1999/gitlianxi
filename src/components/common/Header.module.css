@@ -1,0 +1,154 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: hsla(var(--card-h), var(--card-s), var(--card-l), 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.6);
+  padding: 16px 0;
+  transition: var(--transition-smooth);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  font-size: 24px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  padding: 2px 6px;
+  border-radius: 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.installBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(100, 80, 250, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.installBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(100, 80, 250, 0.3);
+}
+
+.installBtn:active {
+  transform: translateY(0);
+}
+
+.themeSelector {
+  display: flex;
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.05);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.5);
+}
+
+.themeBtn {
+  background: none;
+  border: none;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.6);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.themeBtn:hover {
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+.themeBtn.active {
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.refreshSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.05);
+  padding: 4px 12px;
+  border-radius: 30px;
+  border: 1px solid hsla(var(--border-h), var(--border-s), var(--border-l), 0.5);
+}
+
+.refreshLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: hsla(var(--fg-h), var(--fg-s), var(--fg-l), 0.6);
+  white-space: nowrap;
+}
+
+.refreshSelect {
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  cursor: pointer;
+  outline: none;
+  padding-right: 4px;
+}
+
+.refreshSelect option {
+  background-color: hsl(var(--card-h), var(--card-s), var(--card-l));
+  color: hsl(var(--fg-h), var(--fg-s), var(--fg-l));
+}
+
+@media (max-width: 600px) {
+  .logoText {
+    font-size: 16px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .refreshSelector {
+    display: none; /* Hide on small screens to save space */
+  }
+}
